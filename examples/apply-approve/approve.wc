@@ -1,0 +1,11 @@
+A User is authorized to see an Application when the user is the user of the application.
+
+The fields of an Application are User, ProductType, Address, and ProductInformation.
+
+When a User is at /Application then the user sees a form for the application.
+
+When someone is unauthorized at / then they see a login form and a link to /register.
+
+A login form has a username and a password.
+
+A login form authenticates a User when the usernames match and the passwords have the same hash given the salt for the User.

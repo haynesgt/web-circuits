@@ -1,0 +1,9 @@
+// Style 1
+
+request GET '/user/(?<username>)' = sql_query('SELECT * FROM [USER] WHERE username = :username', username = username)
+
+request POST '/user/(?username)' {email, password} = let salt = randomSalt() in sql_update('INSERT INTO [USER](username, email, salt, password_hash) VALUES (username, email, :salt, :password_hash)', salt = salt, password_hash = hash(salt, password))
+
+// Style 2
+
+
